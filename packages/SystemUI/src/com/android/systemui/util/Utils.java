@@ -22,6 +22,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.os.PowerManager;
+import android.os.SystemClock;
 import android.provider.Settings;
 import android.view.ContextThemeWrapper;
 import android.view.View;
@@ -187,6 +189,13 @@ public class Utils {
         int color = a.getColor(0, defColor);
         a.recycle();
         return color;
+    }
+
+    public static void switchScreenOff(Context ctx) {
+        PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
+        if (pm != null) {
+            pm.goToSleep(SystemClock.uptimeMillis());
+        }
     }
 
 }
