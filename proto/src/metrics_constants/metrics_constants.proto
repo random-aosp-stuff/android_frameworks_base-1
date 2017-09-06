@@ -7434,6 +7434,9 @@ message MetricsEvent {
     SETTINGS_AWARE_DISPLAY = 1750;
     // ---- End Q Constants, all Q constants go above this line ----
     // Add new aosp constants above this line.
-    // END OF AOSP CONSTANTS
+    // END OF AOSP 
+
+    // QS Caffeine Tile constant
+    QS_CAFFEINE = 1751;
   }
 }
