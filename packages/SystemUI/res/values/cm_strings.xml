@@ -146,4 +146,7 @@
 
     <!-- Samsung clock -->
     <string name="clock_title_samsung" translatable="false">Samsung</string>
+
+    <!-- CPUInfo tile -->
+    <string name="quick_settings_cpuinfo_label">CPU Info</string>
 </resources>

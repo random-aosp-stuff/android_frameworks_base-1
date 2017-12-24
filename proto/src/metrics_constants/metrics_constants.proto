@@ -7438,5 +7438,8 @@ message MetricsEvent {
 
     // SwipeToScreenshot constant
     SETTINGS_SWIPE_TO_SCREENSHOT = 1999;
+
+    // QS Info Tiles constant
+    QS_INFO = 4000;
   }
 }
