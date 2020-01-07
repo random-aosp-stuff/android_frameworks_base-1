@@ -143,4 +143,7 @@
 
     <!-- Ambient Music Ticker -->
     <string name="ambientmusic_songinfo" formatted="false">%s by %s</string>
+
+    <!-- Samsung clock -->
+    <string name="clock_title_samsung" translatable="false">Samsung</string>
 </resources>
