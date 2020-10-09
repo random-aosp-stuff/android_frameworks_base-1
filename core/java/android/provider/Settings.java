@@ -4828,6 +4828,12 @@ public final class Settings {
         };
 
         /**
+         * Controls whether to show notification headers
+         * @hide
+         */
+        public static final String NOTIFICATION_HEADERS = "notification_headers";
+
+        /**
          * These are all public system settings
          *
          * @hide
@@ -4934,6 +4940,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(EGG_MODE);
             PRIVATE_SETTINGS.add(SHOW_BATTERY_PERCENT);
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
+            PRIVATE_SETTINGS.add(NOTIFICATION_HEADERS);
         }
 
         /**
