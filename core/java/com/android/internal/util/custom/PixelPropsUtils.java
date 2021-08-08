@@ -16,6 +16,7 @@
 package com.android.internal.util.custom;
 
 import android.os.Build;
+import android.os.SystemProperties;
 import android.util.Log;
 
 import java.util.Arrays;
@@ -53,7 +54,6 @@ public class PixelPropsUtils {
             "com.google.android.apps.turbo",
             "com.google.android.apps.wallpaper",
             "com.google.android.apps.maps",
-            "com.google.android.gms",
             "com.google.android.apps.nexuslauncher"
     };
 
@@ -100,10 +100,6 @@ public class PixelPropsUtils {
             for (Map.Entry<String, Object> prop : propsToChange.entrySet()) {
                 String key = prop.getKey();
                 Object value = prop.getValue();
-                // Don't set model if gms
-                if (packageName.equals("com.google.android.gms") && key.equals("MODEL")){
-                    continue;
-                }
                 setPropValue(key, value);
             }
         }
@@ -128,8 +124,10 @@ public class PixelPropsUtils {
             }
         }
         // Set proper indexing fingerprint
-        if (packageName.equals("com.google.android.settings.intelligence")){
-            setPropValue("FINGERPRINT", Build.DOT_FINGERPRINT);
+        String stockFp = SystemProperties.get("ro.build.fingerprint");
+        if (packageName.equals("com.google.android.settings.intelligence") ||
+            packageName.equals("com.google.android.gms")) {
+            setPropValue("FINGERPRINT", stockFp);
         }
     }
 
