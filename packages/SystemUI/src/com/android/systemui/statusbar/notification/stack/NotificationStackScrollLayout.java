@@ -572,7 +572,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
 
         void update() {
             boolean enabled = Settings.System.getIntForUser(getContext().getContentResolver(),
-                    Settings.System.NOTIFICATION_HEADERS, 1, UserHandle.USER_CURRENT) == 1;
+                    Settings.System.NOTIFICATION_HEADERS, 0, UserHandle.USER_CURRENT) == 1;
             mSectionsManager.setHeadersVisibility(enabled);
         }
     }
@@ -619,7 +619,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
         mFgsSectionController = fgsSectionController;
 
         boolean showHeaders = Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.NOTIFICATION_HEADERS, 1, UserHandle.USER_CURRENT) == 1;
+                Settings.System.NOTIFICATION_HEADERS, 0, UserHandle.USER_CURRENT) == 1;
 
         mSectionsManager = notificationSectionsManager;
         mSectionsManager.initialize(this, LayoutInflater.from(context), showHeaders);
