@@ -38,14 +38,17 @@ public class PixelPropsUtils {
 
     static {
         propsToKeep = new HashMap<>();
-        propsToKeep.put("com.google.android.settings.intelligence", new ArrayList<String>(Arrays.asList("FINGERPRINT")));
         propsToChange = new HashMap<>();
         propsToChange.put("BRAND", "google");
         propsToChange.put("MANUFACTURER", "Google");
-        propsToChange.put("DEVICE", "redfin");
-        propsToChange.put("PRODUCT", "redfin");
-        propsToChange.put("MODEL", "Pixel 5");
-        propsToChange.put("FINGERPRINT", "google/redfin/redfin:11/RQ3A.211001.001/7641976:user/release-keys");
+        propsToChange.put("DEVICE", "raven");
+        propsToChange.put("PRODUCT", "raven");
+        propsToChange.put("MODEL", "Pixel 6 Pro");
+        propsToChange.put("IS_DEBUGGABLE", false);
+        propsToChange.put("IS_ENG", false);
+        propsToChange.put("IS_USERDEBUG", false);
+        propsToChange.put("IS_USER", true);
+        propsToChange.put("TYPE", "user");
     }
 
     public static void setProps(String packageName) {
@@ -64,10 +67,6 @@ public class PixelPropsUtils {
                 if (DEBUG) Log.d(TAG, "Defining " + key + " prop for: " + packageName);
                 setPropValue(key, value);
             }
-        }
-        // Set proper indexing fingerprint
-        if (packageName.equals("com.google.android.settings.intelligence")){
-            setPropValue("FINGERPRINT", Build.DATE);
         }
     }
 
