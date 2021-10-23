@@ -56,7 +56,8 @@ public class PixelPropsUtils {
         if (packageName == null){
             return;
         }
-        if (packageName.startsWith("com.google.") || Arrays.asList(extraPackagesToChange).contains(packageName)){
+        if (packageName.startsWith("com.google.") || packageName.startsWith("com.chrome.") ||
+            Arrays.asList(extraPackagesToChange).contains(packageName)){
             if (DEBUG) Log.d(TAG, "Defining props for: " + packageName);
             for (Map.Entry<String, Object> prop : propsToChange.entrySet()) {
                 String key = prop.getKey();
